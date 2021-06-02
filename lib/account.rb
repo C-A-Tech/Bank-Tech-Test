@@ -19,5 +19,9 @@ class Account
     @statement += "\n #{date} || #{amount} || #{nil} || #{@balance} " 
   end
 
+  def withdraw(amount, date)
+    @balance-=amount
+    @statement += "\n #{date} || #{nil} || #{amount} || #{@balance} " 
+  end
 
 end

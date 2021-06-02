@@ -28,4 +28,13 @@ describe Account do
     end
   end
 
+  context "withdrawing" do
+    it "can withdraw money" do
+      my_acc = Account.new
+      my_acc.deposit(500, "02/06/2021")
+      my_acc.withdraw(300, "04/06/2021")
+      expect(my_acc.statement).to eq("date || credit || debit || balance \n 02/06/2021 || 500 ||  || 500 \n 04/06/2021 ||  || 300 || 200 ")
+    end
+  end
+
 end
