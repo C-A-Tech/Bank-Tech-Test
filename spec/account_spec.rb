@@ -35,6 +35,15 @@ describe Account do
       my_acc.withdraw(300, "04/06/2021")
       expect(my_acc.statement).to eq("date || credit || debit || balance \n 02/06/2021 || 500 ||  || 500 \n 04/06/2021 ||  || 300 || 200 ")
     end
+
+    it "statement shows multiple withdrawls" do
+      my_acc = Account.new
+      my_acc.deposit(1000, "02/06/2021")
+      my_acc.withdraw(300, "04/06/2021")
+      my_acc.withdraw(200, "05/06/2021")
+      expect(my_acc.statement).to eq("date || credit || debit || balance \n 02/06/2021 || 1000 ||  || 1000 \n 04/06/2021 ||  || 300 || 700 \n 05/06/2021 ||  || 200 || 500 ")
+    end
+
   end
 
 end
