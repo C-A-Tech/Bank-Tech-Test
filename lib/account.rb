@@ -2,18 +2,21 @@ class Account
   attr_reader :balance
   def initialize
     @balance = 0
-    @date = ""
-    @credit = nil
-    @debit = nil
+    @statement = "date || credit || debit || balance "
   end
 
   def statement
-    p "date || credit || debit || balance \n #{@date} || #{@credit} || #{@debit} || #{@balance} "
+    if @statement == "date || credit || debit || balance "
+      @statement += "\n  ||  ||  || 0 "
+    else
+      @statement
+    end
   end
 
   def deposit(amount, date)
     @balance+=amount
-    @date = date
-    @credit = amount
+    @statement += "\n #{date} || #{amount} || #{nil} || #{@balance} " 
   end
+
+
 end
