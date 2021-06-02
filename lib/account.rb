@@ -5,6 +5,6 @@ class Account
   end
 
   def statement(date)
-    p "date || credit || debit || balance\n02/06/2021 || || || 0 "
+    p "date || credit || debit || balance\n#{date} || || || #{@balance} "
   end
 end
