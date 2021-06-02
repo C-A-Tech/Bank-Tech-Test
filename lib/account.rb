@@ -4,7 +4,7 @@ class Account
     @balance = 0
   end
 
-  def statement(date)
-    p "date || credit || debit || balance\n#{date} || || || #{@balance} "
+  def statement
+    p "date || credit || debit || balance\n || || || #{@balance} "
   end
 end
