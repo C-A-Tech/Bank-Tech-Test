@@ -6,8 +6,9 @@ class Account
   end
 
   def statement
+    # below if statment checks if any transactions have been made before this method was called
     if @statement == "date || credit || debit || balance "
-      @statement += "\n  ||  ||  || 0 "
+      @statement + "\n  ||  ||  || 0 "
     else
       @statement
     end
