@@ -20,8 +20,12 @@ class Account
   end
 
   def withdraw(amount, date)
-    @balance-=amount
-    @statement += "\n #{date} || #{nil} || #{amount} || #{@balance} " 
+    if @balance < amount
+      raise "Insufficient Funds"
+    else
+      @balance-=amount
+      @statement += "\n #{date} || #{nil} || #{amount} || #{@balance} " 
+    end
   end
 
 end
