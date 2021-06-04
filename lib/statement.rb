@@ -1,10 +1,10 @@
 require_relative "account"
 
 class Statement
-  def initialize(account = Account.new)
+  def initialize(transactions)
     @opening_statment = "date || credit || debit || balance"
     @transactions = ""
-    account.each{ |transaction|  @transactions += transaction }
+    transactions.each{ |transaction|  @transactions += transaction }
   end
 
   def print
