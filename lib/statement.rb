@@ -1,9 +1,10 @@
 require "account"
 
 class Statement
-  def initialize(transactions)
-    @transactions = transactions
-    @opening_statment = "date || credit || debit || balance "
+  def initialize(account = Account.new)
+    @opening_statment = "date || credit || debit || balance"
+    @transactions = ""
+    account.each{ |transaction|  @transactions += transaction }
   end
 
   def print
