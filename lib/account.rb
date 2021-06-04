@@ -10,13 +10,13 @@ class Account
 
   def deposit(amount, date)
     @balance += amount
-    @transactions << " \n #{date} || #{amount} || nil || #{@balance} "
+    @transactions << " \n #{date} || #{amount} || nil || #{@balance}"
   end
 
   def withdraw(amount, date)
     raise 'Insufficient Funds' if @balance < amount
 
     @balance -= amount
-    @statement += "\n #{date} || nil || #{amount} || #{@balance} "
+    @transactions << " \n #{date} || nil || #{amount} || #{@balance}"
   end
 end
