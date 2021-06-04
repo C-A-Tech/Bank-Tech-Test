@@ -18,7 +18,7 @@ describe Account do
   it 'can deposit money' do
     my_acc = Account.new
     my_acc.deposit(500, '02/06/2021')
-    expect(my_acc.transactions).to eq [" \n 02/06/2021 || 500 || || 500"]
+    expect(my_acc.transactions).to eq [" \n 02/06/2021 || 500.00 || || 500.00"]
   end
 
 
@@ -26,7 +26,7 @@ describe Account do
     my_acc = Account.new
     my_acc.deposit(500, '02/06/2021')
     my_acc.withdraw(300, '04/06/2021')
-    expect(my_acc.transactions).to eq [" \n 02/06/2021 || 500 || || 500", " \n 04/06/2021 || || 300 || 200"]
+    expect(my_acc.transactions).to eq [" \n 02/06/2021 || 500.00 || || 500.00", " \n 04/06/2021 || || 300.00 || 200.00"]
   end
 
   it 'cannot withdraw more than balance' do
