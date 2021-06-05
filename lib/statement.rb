@@ -8,6 +8,25 @@ class Statement
   end
 
   def print
+    transactions_present?
+  end
+
+  private 
+
+  def transactions_present?
+    if @transactions == ""
+      dont_show_statement
+    else
+      show_statement
+    end
+  end
+
+  def show_statement 
     @opening_statment + @transactions
   end
+  
+  def dont_show_statement
+    @opening_statment
+  end
+
 end
